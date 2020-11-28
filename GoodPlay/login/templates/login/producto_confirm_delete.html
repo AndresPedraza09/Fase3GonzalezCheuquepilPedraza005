@@ -1,0 +1,14 @@
+{%extends "base_generic.html"%}
+
+{%block content%}
+<div class="controls form-register">
+<h1 > Eliminar producto </h1>
+<p>¿Estas seguro de eliminar el producto {{producto.nombre_producto}} ? </p>
+
+<form action="" method="post" >
+    {% csrf_token %}
+    
+    <a href="{% url 'index.html'%}"class="btn btn-primary btn-xl" >eliminar</a>
+</form>
+</div>
+{%endblock%}

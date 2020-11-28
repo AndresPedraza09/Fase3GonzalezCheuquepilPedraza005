@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="controls form-register">
+<h1 >Informacion del producto:</h1>
+<p ><strong>Codigo: </strong> {{ producto.id_producto }}</p>
+<p ><strong>Nombre: </strong> {{ producto.nombre_producto }}</p>
+<p ><strong>Precio: </strong> {{ producto.precio }}</p>
+<p ><strong>Marca: </strong> {{ producto.marca }}</p>
+</div>
+
+  
+
+{% endblock %}

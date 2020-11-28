@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Good Play</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/estilo2.css' %}">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      
+      {% block sidebar %}
+      <ul class="sidebar-nav">
+        <ul class="sidebar-nav">
+          <li><a href="{% url 'index.html' %}">Home</a></li>
+          <li><a href="{% url 'juego_create' %}">Ingresar Juego</a></li>
+          <li><a href="{% url 'password_reset' %}">Reiniciar Password</a></li>
+          <li><a href="{% url 'juego_list' %}">Ver Juegos</a></li>
+          <li><a href="{% url 'compañia_list' %}">Ver Compañias</a></li>
+          <li><a href="{% url 'producto_list' %}">Ver Productos</a></li>
+            
+        </ul>
+      </ul>
+     {% endblock %}
+      </div>
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      {% block content %}{% endblock %}
+     	
+      
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="controls form-register">
+    <h1>Lista de Compañias</h1>
+
+    {% if compañia_list %}
+    <ul>
+      {% for Compañia in compañia_list %}
+      <li>
+        <a href="{{ Compañia.get_absolute_url }}">{{ Compañia.nombre_compañia }}</a> 
+      </li>
+    
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>No se ha agregado ninguna Compañia</p>
+   
+    {% endif %}  
+    {%	block	pagination	%}
+    {%	if	is_paginated	%}
+      <span	class="page-links">
+        {%	if	page_obj.has_previous	%}
+                        <a	href="{{	request.path	}}?page={{	page_obj.previous_page_number	}}">previous</a>
+        {%	endif	%}
+        <span	class="page-current">
+                        Page	{{	page_obj.number }}	of	{{	page_obj.paginator.num_pages	}}.
+        </span>
+        {%	if	page_obj.has_next	%}
+                        <a	href="{{	request.path	}}?page={{	page_obj.next_page_number	}}">next</a>
+        {%	endif	%}
+       </span>
+                  
+    {%	endif	%}
+{%	endblock	%}
+</div>     
+{% endblock %}
