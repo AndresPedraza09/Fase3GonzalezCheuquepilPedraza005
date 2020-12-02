@@ -64,6 +64,7 @@ class JuegoDetailView(generic.DetailView):
 
 class JuegoListView(generic.ListView):
     model = Juego
+    template_name = 'templates/login/compañia_list.html'
     paginate_by=10
 
 
@@ -85,7 +86,9 @@ class CompañiaDetailView(generic.DetailView):
 
 class CompañiaListView(generic.ListView):
     model = Compañia
+    template_name = 'templates/login/compañia_list.html'
     paginate_by=10
+
 
 class ProductoCreate(CreateView):
     model = Producto
@@ -131,7 +134,7 @@ def juego_edit(request, pk):
             return redirect('juego-detail', pk=post.pk)
     else:
         form = JuegoForm(instance=post)
-    return render(request, 'login/juego_form.html', {'form': form})
+    return render(request, 'login/juego_form', {'form': form})
 
 def compañia_new(request):
     if request.method == "POST":
